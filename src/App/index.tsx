@@ -1,7 +1,11 @@
+import { Main } from "./Main"
+import NavBar from "./Widgets/NavBar"
+
 const App = () => {
   return (
     <div>
-      App is here
+      <NavBar />
+      <Main />
     </div>
   )
 }
