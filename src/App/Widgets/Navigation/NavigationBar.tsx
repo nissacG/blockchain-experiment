@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     background: "#fff",
     color: "#000"
   }
-});
+})
 
 const NavigationBar = () => {
   const { root } = useStyles()
