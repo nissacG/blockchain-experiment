@@ -1,10 +1,13 @@
-import React from 'react'
+import { Container, Typography } from "@mui/material"
 
 const Main = () => {
   return (
-    <div>
-      Main is here
-    </div>
+    <>
+      <Container sx={{ backgroundColor: "#000", p: 3, m: 0 }}>
+        <Typography variant="h4" component="div" sx={{color: "#fff"}} >CovidPunks</Typography>
+
+        </Container>
+    </>
   )
 }
 
