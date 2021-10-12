@@ -8,8 +8,8 @@ const Web3 = require("web3")
 // define the about route
 router.get('/:id', (req, res) => {
   if(req.params.id === process.env.CONTRACT) {
-    const web3 = new Web3(process.env.INFURA)
-    const contract = new web3.eth.Contract(abi, process.env.CONTRACT)
+    const web3 = new Web3(process.env.INFURA_URL)
+    const contract = new web3.eth.Contract(abi, req.params.id)
     const getTokenOwner = async(token) => await contract.methods.ownerOf(token).call((err, result) => result)
     const getTokenURI = async (tokenUri) => await contract.methods.tokenURI(tokenUri).call((err, result) => result)
     const getTokenImageUrl = (tokenJson) => axios.get(tokenJson)

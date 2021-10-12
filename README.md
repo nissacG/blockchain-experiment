@@ -3,10 +3,12 @@ COVIDPunks is one of hottest NFT tokens on Ethereum. Your task is to implement a
 • COVIDPunks Contract Address on Ethereum:
 0xe4cfae3aa41115cb94cff39bb5dbae8bd0ea9d41
 
+
+## **Before Running**
+You will need to create/add a `.env` file in the server folder. This will need to include the Infura key. Please see .env.example 
 ## Available Scripts
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs both server and client in the development mode.\
@@ -33,7 +35,8 @@ I also had to brush off the dust of my server side code as have not worked with 
 
 ## Improvements
 * Further UI improvements
-  *  Loading component which perhaps allowed you to continue to view existing data whilst waiting for more
+  * Have a select/dropdown to select project/contract rather than hard coding
+  * Loading component which perhaps allowed you to continue to view existing data whilst waiting for more
   * Better/correct error handling
 * Would prefer to use GQL and have the server be able to provide all data attributes then utilise GQL to only get the necessary data
 * More tests - incluse more testing for all components, as well as loading and error states
