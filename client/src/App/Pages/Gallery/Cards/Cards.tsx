@@ -4,6 +4,7 @@ import useCards from "./useCards"
 
 const Cards = () => {
   const { data, loading, error } = useCards()
+  console.log('data:', data)
 
 
   return (

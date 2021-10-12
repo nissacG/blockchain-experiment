@@ -8,7 +8,7 @@ interface CardProps {
 
 const Card = ({ id, imageUrl, owner }: CardProps) => {
   return (
-    <MaterialCard sx={{ maxWidth: 345 }} data-testId={id}>
+    <MaterialCard sx={{ maxWidth: 345 }} data-testid={id}>
       <CardMedia
         component="img"
         height="345"
