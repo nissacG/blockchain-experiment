@@ -16,7 +16,10 @@ const Card = ({ id, imageUrl, owner }: CardProps) => {
         alt={`image for ${imageUrl}`}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body1" color="text.secondary" >
+          Owner:
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ overflowWrap: "break-word" }}>
           {owner}
         </Typography>
       </CardContent>
