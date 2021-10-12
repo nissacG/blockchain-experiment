@@ -14,16 +14,16 @@ router.get('/:id', (req, res) => {
     const getTokenURI = async (tokenUri) => await contract.methods.tokenURI(tokenUri).call((err, result) => result)
     const getTokenImageUrl = (tokenJson) => axios.get(tokenJson)
       .then(({data}) => data.image)
-      .catch(err => console.log(err))
+      .catch(err => console.error(err))
     const getTokens = async (numberOfToken = 10) => {
       const arr = []
       for (let i = 1; i < numberOfToken+1; i++) {
-        console.log(i)
         const tokenOwner = await getTokenOwner(i).then(res)
         const tokenImageUrl = await getTokenURI(i)
           .then(result => getTokenImageUrl(result))
-          .catch(err => console.log(err))
+          .catch(err => console.error(err))
         arr.push({
+          id: i,
           tokenOwner,
           tokenImageUrl
         })

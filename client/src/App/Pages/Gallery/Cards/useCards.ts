@@ -1,24 +1,28 @@
-export default function useCards() {
-  // make API call
-  const getPunks = () => {
-    
-    const data = fetch("http://localhost:5000/health")
-      .then(res => res.text())
-      .then(res => console.log(res))
-      .catch(err => (err))
-    return data
+import { useEffect, useState } from "react"
+import { Contract } from "./types"
+
+export default function useCards(contractId: string) {
+  const [loading, setLoading] = useState(false)
+  const [data, setData] = useState<Contract[] | null>()
+
+  const fetchContract = async (contractId: string) => {
+    try {
+      setLoading(true)
+      const url = `http://localhost:5000/contract/${contractId}`
+      const response = await fetch(url)
+      const jsonResponse = await response.json()
+      setLoading(false)
+      return setData(jsonResponse)
+    } catch (err) {
+      setLoading(false)
+      console.error(err)
+    }
   }
 
-  getPunks()
-  const data = [
-    { id: "1", owner: "123", imageUrl: "https://gateway.pinata.cloud/ipfs/QmdgUE1FeuBhHk2jPyHShdcgwhG1ReSCE4gCSycNxj98JM" },
-    { id: "2", owner: "1234", imageUrl: "https://gateway.pinata.cloud/ipfs/QmdgUE1FeuBhHk2jPyHShdcgwhG1ReSCE4gCSycNxj98JM" },
-    { id: "3", owner: "12345", imageUrl: "https://gateway.pinata.cloud/ipfs/QmdgUE1FeuBhHk2jPyHShdcgwhG1ReSCE4gCSycNxj98JM" },
-    { id: "4", owner: "123456", imageUrl: "https://gateway.pinata.cloud/ipfs/QmdgUE1FeuBhHk2jPyHShdcgwhG1ReSCE4gCSycNxj98JM" }
-  ]
-  const loading = false
+  useEffect(() => {
+    fetchContract(contractId)
+  }, [contractId])
   const error = undefined
-
 
   return {
     data,

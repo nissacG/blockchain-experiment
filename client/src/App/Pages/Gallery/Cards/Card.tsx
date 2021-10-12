@@ -13,7 +13,7 @@ const Card = ({ id, imageUrl, owner }: CardProps) => {
         component="img"
         height="345"
         image={imageUrl}
-        alt="Paella dish"
+        alt={`image for ${imageUrl}`}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
