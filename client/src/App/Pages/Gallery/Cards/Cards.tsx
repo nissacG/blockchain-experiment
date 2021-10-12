@@ -9,15 +9,15 @@ const Cards = () => {
 
   return (
     <ErrorGuard error={error}>
-      <Box sx={{ backgroundColor: "#f3f3f3", p: 4, height: "100vh" }}>
+      <Box sx={{ backgroundColor: "#f3f3f3", p: 4, height: `calc(100vh - 248px)`, overflowY: "scroll" }}>
         <Grid
           container
           spacing={0}
         >
           <Loader isLoading={loading} >
             {!loading && data && data.map(({ id, tokenOwner, tokenImageUrl }) => (
-              <Grid item xs={12} sm={6} md={4} sx={{ mb: 4 }}>
-                <Card key={id} id={id} owner={tokenOwner} imageUrl={tokenImageUrl} />
+              <Grid key={id} item xs={12} sm={6} md={4} sx={{ mb: 4 }}>
+                <Card id={id} owner={tokenOwner} imageUrl={tokenImageUrl} />
               </Grid>
             ))}
           </Loader>
