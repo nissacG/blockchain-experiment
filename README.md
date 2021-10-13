@@ -5,10 +5,14 @@ COVIDPunks is one of hottest NFT tokens on Ethereum. Your task is to implement a
 
 
 ## **Before Running**
+### Env
 You will need to create/add a `.env` file in the server folder. This will need to include the Infura key. Please see .env.example 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run install`
+Will install required dependancies for both server and client
 ### `npm start`
 
 Runs both server and client in the development mode.\
