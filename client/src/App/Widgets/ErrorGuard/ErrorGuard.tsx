@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react"
 
 interface LoadingProps {
-  error: boolean | undefined
+  error: unknown
 }
 
 const ErrorGuard = ({ children, error }: PropsWithChildren<LoadingProps>) =>

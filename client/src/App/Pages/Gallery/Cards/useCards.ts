@@ -3,16 +3,18 @@ import { Contract } from "./types"
 
 export default function useCards(contractId: string) {
   const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<Contract[] | null>()
+  const [data, setData] = useState<Contract[] | null>(null)
+  const [error, setError] = useState<unknown>(null)
 
   const fetchContract = async (contractId: string) => {
     try {
       setLoading(true)
+      setError(null)
       const url = `http://localhost:5000/contract/${contractId}`
       const response = await fetch(url)
       const jsonResponse = await response.json()
       setLoading(false)
-      return setData(jsonResponse)
+      return jsonResponse.msg ? setError(jsonResponse) : setData(jsonResponse)
     } catch (err) {
       setLoading(false)
       console.error(err)
@@ -22,7 +24,6 @@ export default function useCards(contractId: string) {
   useEffect(() => {
     fetchContract(contractId)
   }, [contractId])
-  const error = undefined
 
   return {
     data,
