@@ -37,6 +37,8 @@ This was a fun task! Have not used Web3 before but its exciting to see the contr
 I use styled-components day to day but extended myself to try and use Mui as I believe this is what your team uses.
 I also had to brush off the dust of my server side code as have not worked with it for a while 😊
 
+**On that note - I have only implemented the task for 10 tokens, rather than the requested 100. This was due to my implementation on the server side code and it taking far too long for requests to be made. I would happily be explained how this would be improved as it is not my area of expertise.**
+
 ## Improvements
 * Further UI improvements
   * Have a select/dropdown to select project/contract rather than hard coding
